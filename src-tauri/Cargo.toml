@@ -1,0 +1,17 @@
+[package]
+license = "GPL-3.0-only"
+name = "lexiflow"
+version = "1.1.5"
+edition = "2021"
+
+[lib]
+name = "lexiflow_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"

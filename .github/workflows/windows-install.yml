@@ -1,0 +1,21 @@
+name: Windows custom install directory
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  install:
+    runs-on: windows-2022
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and verify the release installer
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download v1.1.5 -p '*Windows-x64-Setup.exe'
+          if ($LASTEXITCODE) { throw 'release download failed' }
+          $exe = Get-Item *Setup.exe
+          $expected = ((Get-Content SHA256SUMS | Select-String -SimpleMatch $exe.Name).Line -split ' ')[0]
+          if ((Get-FileHash $exe).Hash -ne $expected) { throw 'Checksum mismatch' }
+          ./packaging/verify-directory.ps1 $exe.FullName

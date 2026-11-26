@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="night" x2=".9" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#234959"/><stop offset="1" stop-color="#102e40"/></linearGradient>
+    <linearGradient id="leaf"><stop stop-color="#ffecc0"/><stop offset="1" stop-color="#fff9e5"/></linearGradient>
+  </defs>
+  <rect x="6" y="6" width="244" height="244" rx="55" fill="url(#night)"/>
+  <circle cx="177" cy="65" r="13" fill="#e8b568"/>
+  <path d="M42 90 Q81 77 120 108 C115 133 155 141 124 177 Q91 155 42 164Z" fill="url(#leaf)"/>
+  <path d="M135 105 Q166 81 213 87 L213 158 Q166 153 135 177 C162 146 123 133 135 105Z" fill="#f7e4b5"/>
+  <path d="M42 174 Q88 165 119 187 Q90 174 52 184Z M142 185 Q175 162 213 168 L207 177 Q172 174 142 185Z" fill="#6fb5b3"/>
+  <path d="M130 162 C132 181 97 188 105 204 C104 194 147 187 138 165 Q136 181 111 191 C122 182 134 177 130 162Z" fill="#80c9c0"/>
+</svg>
